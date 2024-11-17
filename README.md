@@ -85,11 +85,6 @@ while True:
         d2= float(input("d2 - "))
         print(f"obwód_ = {figury.pole_rombu(d1,d2)}")
 
-
-
-
-
-
 import math
 
 def obwod_kwadratu(a):
