@@ -1,0 +1,18 @@
+def Display(dict):
+    for key, value in dict.items():
+        print(f"{key}:  {value}")
+
+def Update(dict):
+    print("Wpisz klucz którego wartość chcesz edytować")
+    key = input()
+    dict[key] = input("Podaj nową wartość klucza")
+
+def Add(dict):
+    print("Wpisz klucz który chesz dodać")
+    key = input()
+    dict[key] = input("Podaj wartość nowego klucza")
+
+def Remove(dict):
+    print("Wpisz klucz który chesz usunąć")
+    key = input()
+    dict.pop(key, 0)
