@@ -1,0 +1,31 @@
+import uuid
+from Functions import Display_Library, Update_Book, Add_Book, Remove_Book, Display_Book, Update_Book_Key, Add_Update_Book_Key, Remove_Book_Key
+
+book = {
+    "title" : "Balladyna",
+    "pages" : 400,
+}
+
+library = [book.copy(), book.copy(), book.copy()]
+for book in library:
+    book["id"] = uuid.uuid4()
+
+while True:
+    print("==="*25)
+    print("update - Edytuj książkę")
+    print("add - Dodaj nową książkę")
+    print("remove - Usuń książkę")
+    print("display - Wypisz książki")
+    print("exit - Zakończ program")
+    print("==="*25)
+    inp = input()
+    if 'update' == inp:
+        Update_Book(library)
+    elif 'add' == inp:
+        Add_Book(library)
+    elif 'remove' == inp:
+        Remove_Book(library)
+    elif 'display' == inp:
+        Display_Library(library)
+    elif 'exit' == inp:
+        break
