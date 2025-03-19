@@ -1,0 +1,53 @@
+import uuid
+
+def Display_Library(arr):
+    print("==="*25)
+    print("Lista wszystkich książek")
+    for dict in arr:
+        Display_Book(dict)
+    print("==="*25)
+
+def Add_Book(arr):
+    title = input("Podaj tytuł książki")
+    pages = input("Podaj ilość stron")
+    new_book = { "title" : title, "pages" : pages, "id" : uuid.uuid4() }
+    arr.append(new_book)
+
+def Update_Book(arr):
+    Display_Library(arr)
+    id = input("Podaj identyfikator książki do edycji")
+    id = uuid.UUID(id)
+    for dict in arr:
+        if(dict["id"] == id):
+            Update_Book_Key(dict)
+
+def Remove_Book(arr):  
+    Display_Library(arr)
+    id = input("Podaj identyfikator książki do usunięcia")
+    id = uuid.UUID(id)
+    for dict in arr:
+        if(dict["id"] == id):
+            arr.remove(dict)
+
+def Display_Book(dict):
+    for key, value in dict.items():
+        print(f"{key}:  {value}")
+
+def Update_Book_Key(dict):
+    while True:
+        print("==="*25)
+        print("     update - Edytuj wartość książki")
+        print("     add - Dodaj wartość książki")
+        print("     remove - Usuń wartość książki")
+        print("     display - Wypisz informacje książki")
+        print("     exit - Zakończ program")
+        print("==="*25)
+        inp = input().lower()
+        if 'add' == inp or 'update' == inp:
+            Add_Update_Book_Key(dict)
+        elif 'remove' == inp:
+            Remove_Book_Key(dict)
+        elif 'display' == inp:
+            Display_Book(dict)
+        elif 'exit' == inp:
+            break
