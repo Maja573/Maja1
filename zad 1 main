@@ -1,0 +1,26 @@
+from Functions import Display, Update, Add, Remove
+
+book = {
+    "title" : "Balladyna",
+    "pages" : 400
+}
+
+while True:
+    print("==="*25)
+    print("update - Edytuj wartość książki")
+    print("add - Dodaj wartość książki")
+    print("remove - Usuń wartość książki")
+    print("display - Wypisz informacje książki")
+    print("exit - Zakończ program")
+    print("==="*25)
+    inp = input().lower()
+    if 'update' == inp:
+        Update(book)
+    elif 'add' == inp:
+        Add(book)
+    elif 'remove' == inp:
+        Remove(book)
+    elif 'display' == inp:
+        Display(book)
+    elif 'exit' == inp:
+        break
